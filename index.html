@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sam’s App — Download</title>
+  <meta name="description" content="Download Sam’s App for macOS or Windows, or launch the web version." />
+  <style>
+    :root{
+      --brand-h: 220; --brand-s: 90%; --brand-l: 32%;
+      --brand: hsl(var(--brand-h) var(--brand-s) var(--brand-l));
+      --brand-ink: hsl(var(--brand-h) 28% 18%);
+      --accent: hsl(0 74% 52%);
+      --bg: #ffffff;
+      --ink: #0b1526;
+      --muted: hsl(var(--brand-h) 25% 96%);
+      --muted-ink: hsl(var(--brand-h) 20% 35%);
+      --ring: hsl(var(--brand-h) 86% 54% / 0.45);
+      --radius: 18px;
+      --shadow: 0 10px 30px rgba(7, 16, 40, .08);
+      --container: 1100px;
+    }
+    html,body{height:100%}
+    body{margin:0; font:16px/1.5 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Arial, "Apple Color Emoji", "Segoe UI Emoji"; color:var(--ink); background:var(--bg); -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;}
+    .skip-link{position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden}
+    .skip-link:focus{left:16px; top:16px; width:auto; height:auto; background:#fff; padding:.6rem .8rem; z-index:1000; border-radius:10px; outline:3px solid var(--ring)}
+    header{position:sticky; top:0; z-index:60; backdrop-filter:saturate(140%) blur(6px); background:color-mix(in oklab, var(--bg) 84%, white); border-bottom:1px solid hsl(220 15% 92%)}
+    .nav{max-width:var(--container); margin:auto; display:flex; align-items:center; gap:14px; padding:14px 18px}
+    .brand{display:flex; align-items:center; gap:12px; text-decoration:none}
+    .brand .logomark{width:36px; height:36px}
+    .brand .logotype{font-weight:700; letter-spacing:.2px; color:var(--brand-ink)}
+    .navlinks{margin-left:auto; display:flex; gap:8px}
+    .navlinks a{padding:.55rem .8rem; text-decoration:none; color:var(--brand-ink); border-radius:10px}
+    .navlinks a:hover{background:var(--muted)}
+    .cta{background:var(--brand); color:white; border-radius:12px; padding:.55rem .9rem; text-decoration:none; font-weight:600}
+    .cta:hover{filter:brightness(1.02)}
+
+    .hero{position:relative; overflow:hidden}
+    .hero .wrap{max-width:var(--container); margin:auto; padding:clamp(2rem,4vw+1rem,4.5rem) 18px}
+    .tag{display:inline-flex; align-items:center; gap:.5rem; padding:.35rem .6rem; background:var(--muted); color:var(--muted-ink); border-radius:999px; font-weight:600; font-size:.9rem}
+    h1{font-size:clamp(1.8rem,2.5vw+1rem,3rem); margin:.8rem 0 .5rem; letter-spacing:.2px}
+    .lead{font-size:clamp(1rem,1vw+.6rem,1.25rem); color:#344562; max-width:60ch}
+
+    .buttons{display:flex; flex-wrap:wrap; gap:12px; margin-top:1.2rem}
+    .btn{display:inline-flex; align-items:center; gap:.6rem; text-decoration:none; padding:.9rem 1.05rem; border-radius:14px; font-weight:700; border:1px solid hsl(220 25% 89%); box-shadow:var(--shadow); background:white; color:var(--brand-ink)}
+    .btn svg{width:22px; height:22px}
+    .btn.primary{background:var(--brand); color:white; border-color:transparent}
+    .btn.secondary{background:white}
+    .btn.recommended{outline:3px solid var(--ring)}
+
+    .strip{background:var(--muted); border-top:1px solid hsl(220 15% 92%); border-bottom:1px solid hsl(220 15% 92%)}
+    .container{max-width:var(--container); margin:auto; padding:clamp(1.2rem,3vw+.5rem,2rem) 18px}
+
+    .grid{display:grid; gap:16px}
+    .grid.cards{grid-template-columns:repeat(12,1fr)}
+    .card{grid-column:span 12; background:white; border:1px solid hsl(220 24% 90%); border-radius:var(--radius); padding:18px; box-shadow:var(--shadow)}
+    .card h3{margin:.2rem 0 .5rem}
+    .card p{margin:0; color:#415575}
+    .card .actions{display:flex; gap:10px; margin-top:12px; flex-wrap:wrap}
+
+    @media(min-width:720px){.card.span-4{grid-column:span 4}}
+
+    .features{display:grid; grid-template-columns:repeat(12,1fr); gap:16px}
+    .feature{grid-column:span 12; background:white; border:1px dashed hsl(220 24% 90%); border-radius:16px; padding:16px}
+    @media(min-width:720px){.feature{grid-column:span 6}}
+
+    details{background:white; border:1px solid hsl(220 24% 90%); border-radius:14px; padding:10px 14px}
+    summary{cursor:pointer; font-weight:700}
+    .faq{display:grid; gap:10px}
+
+    footer{border-top:1px solid hsl(220 15% 92%); background:#fbfcff}
+    footer .container{display:grid; gap:10px}
+    .fine{color:#50607b; font-size:.92rem}
+
+    :where(a,button,summary,.btn):focus-visible{outline:3px solid var(--ring); outline-offset:2px; border-radius:12px}
+    @media(prefers-reduced-motion:no-preference){.btn{transition:transform .08s ease, box-shadow .2s ease} .btn:active{transform:translateY(1px)}}
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header role="banner">
+    <nav class="nav" aria-label="Primary">
+      <a class="brand" href="#">
+        <svg class="logomark" viewBox="0 0 48 48" aria-hidden="true">
+          <defs>
+            <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="hsl(220 80% 65%)" />
+              <stop offset="1" stop-color="hsl(220 88% 45%)" />
+            </linearGradient>
+          </defs>
+          <circle cx="24" cy="24" r="18" fill="url(#g)" opacity=".18" />
+          <circle cx="24" cy="24" r="13" fill="none" stroke="url(#g)" stroke-width="6" />
+        </svg>
+        <span class="logotype">Sam’s App</span>
+      </a>
+      <div class="navlinks">
+        <a href="#downloads">Downloads</a>
+        <a href="#features">Features</a>
+        <a href="#faq">FAQ</a>
+        <a class="cta" href="https://tflforsam.onrender.com" target="_blank" rel="noopener">Open Web App</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="wrap">
+        <span class="tag" id="recommendation" aria-live="polite">We’ll suggest the best download for your device</span>
+        <h1 id="hero-title">Get Sam’s App</h1>
+        <p class="lead">Fast setup for macOS and Windows, plus a browser version if you’d rather run it online.</p>
+        <div class="buttons" role="group" aria-label="Primary download options">
+          <a id="btn-mac" class="btn primary" href="./macdownload/SamApp-latest.zip" data-os="mac" download>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 17a6 6 0 0 1 6-6h4a6 6 0 0 1 6 6v3H4zM8 9a4 4 0 1 1 8 0H8z"/></svg>
+            <span>Download for macOS</span>
+          </a>
+          <a id="btn-win" class="btn secondary" href="./windownload/SamApp-latest.exe" data-os="windows" download>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4l8-2v9H3V4zm10-2l8-2v11h-8V2zM3 13h8v9l-8-2v-7zm10 0h8v9l-8-2v-7z"/></svg>
+            <span>Download for Windows</span>
+          </a>
+          <a id="btn-web" class="btn secondary" href="https://tflforsam.onrender.com" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm-1 17.9A8 8 0 0 1 4.1 13H11v6.9zM4.1 11A8 8 0 0 1 11 4.1V11H4.1zM13 4.1A8 8 0 0 1 19.9 11H13V4.1zM13 13h6.9A8 8 0 0 1 13 19.9V13z"/></svg>
+            <span>Use the Web App</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="downloads" class="strip">
+      <div class="container">
+        <h2>Choose your platform</h2>
+        <div class="grid cards">
+          <article class="card span-4">
+            <h3>macOS</h3>
+            <p>Universal build, auto‑updates. Works on Apple silicon and Intel Macs.</p>
+            <div class="actions">
+              <a class="btn primary" href="./macdownload/SamApp-latest.zip" download>Download .dmg</a>
+              <a class="btn" href="#faq">Install help</a>
+            </div>
+          </article>
+          <article class="card span-4">
+            <h3>Windows</h3>
+            <p>Digitally signed installer. Compatible with Windows 10/11.</p>
+            <div class="actions">
+              <a class="btn primary" href="./windownload/SamApp-latest.exe" download>Download .exe</a>
+              <a class="btn" href="#faq">Install help</a>
+            </div>
+          </article>
+          <article class="card span-4">
+            <h3>Web version</h3>
+            <p>No install needed. Runs in your browser at <strong>tflforsam.onrender.com</strong>.</p>
+            <div class="actions">
+              <a class="btn primary" href="https://tflforsam.onrender.com" target="_blank" rel="noopener">Open Web App</a>
+              <a class="btn" href="#install-web">Install to Dock/Taskbar</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="container">
+      <h2>Why this app?</h2>
+      <div class="features">
+        <div class="feature">
+          <strong>Fast & lightweight</strong>
+          <p>Optimized startup and minimal resource use so it stays out of your way.</p>
+        </div>
+        <div class="feature">
+          <strong>Privacy‑respecting</strong>
+          <p>No tracking scripts, no ads. Your data stays on your device unless you sync by choice.</p>
+        </div>
+        <div class="feature">
+          <strong>Built for Sam</strong>
+          <p>Happy Birthday.</p>
+        </div>
+        <div class="feature">
+          <strong>Works everywhere</strong>
+          <p>Pick macOS, Windows, or the browser version — the experience is consistent.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="install-web" class="container">
+      <h2>Install the web app</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>macOS</h3>
+          <p>In Safari or Chrome, open the web app, then look for “Add to Dock” (Safari) or “Install App” (Chrome) from the address bar.</p>
+        </div>
+        <div class="card">
+          <h3>Windows</h3>
+          <p>In Edge or Chrome, open the web app and choose “Install app” from the address bar to pin it to your Start menu or Taskbar.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="container">
+      <h2>FAQ/Legal Stuff</h2>
+      <div class="faq">
+        <details>
+          <summary>Is this affiliated with Transport for London (TfL)?</summary>
+          <p>No. This page is <strong>not</strong> affiliated with or endorsed by TfL. Names and links are for descriptive purposes only.</p>
+        </details>
+        <details>
+          <summary>What are the system requirements?</summary>
+          <p><strong>macOS:</strong> 12 Monterey or later. <strong>Windows:</strong> 10 (19045) or 11. Web version works in any modern Chromium, Safari, or Firefox.</p>
+        </details>
+        <details>
+          <summary>The download didn’t start — what should I do?</summary>
+          <p>Right‑click the button and choose Save link as…. If your browser warns you about uncommon downloads, choose Keep if you trust the file source.</p>
+        </details>
+        <details>
+          <summary>How do I update?</summary>
+          <p>The desktop app checks for updates automatically. The web app updates itself every time you refresh.</p>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p class="fine">© <span id="y"></span> T.O. Not affiliated with Transport for London. This page provides download links for personal use.</p>
+    </div>
+  </footer>
+
+  <script>
+    (function(){
+      const byId = id => document.getElementById(id);
+      const macBtn = byId('btn-mac');
+      const winBtn = byId('btn-win');
+      const rec = byId('recommendation');
+      const year = new Date().getFullYear();
+      const yearEl = document.getElementById('y');
+      if (yearEl) yearEl.textContent = year;
+
+      const ua = navigator.userAgent || navigator.platform || '';
+      const isMac = /Mac|Macintosh|Mac OS X/i.test(ua);
+      const isWin = /Win/i.test(ua);
+      if (rec) {
+        if (isMac) { macBtn?.classList.add('recommended'); rec.textContent = 'Recommended: macOS download for your device'; }
+        else if (isWin) { winBtn?.classList.add('recommended'); rec.textContent = 'Recommended: Windows download for your device'; }
+        else { rec.textContent = 'Tip: Use the Web App if you’re on mobile or Linux'; }
+      }
+
+      const DOWNLOADS = {
+        mac: './macdownload/SamApp-latest.zip',
+        windows: './windownload/SamApp-latest.exe',
+        web: 'https://tflforsam.onrender.com'
+      };
+
+      macBtn?.addEventListener('click', () => macBtn.setAttribute('href', DOWNLOADS.mac));
+      winBtn?.addEventListener('click', () => winBtn.setAttribute('href', DOWNLOADS.windows));
+      byId('btn-web')?.addEventListener('click', e => e.currentTarget.setAttribute('href', DOWNLOADS.web));
+
+      [macBtn, winBtn, byId('btn-web')].forEach(el => el?.addEventListener('click', () => {
+        try { console.log('[download]', el?.dataset.os || 'web'); } catch (_) {}
+      }));
+    })();
+  </script>
+</body>
+</html>
+</title>
+</head>
+<body>
+
+</body>
+</html>
